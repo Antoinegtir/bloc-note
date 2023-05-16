@@ -1,0 +1,78 @@
+name: Action
+
+on:
+  push:
+    branches-ignore:
+      - "ga-ignore-*"
+  pull_request:
+
+env:
+  MIRROR_URL: "git@github.com:EpitechPromo2027/B-DOP-200-NAN-2-1-chocolatine-antoine.gonthier.git"
+  EXECUTABLES: "generator"
+
+jobs:
+  check_coding_style:
+    runs-on: ubuntu-latest
+    needs: [check_program_compilation, run_tests]
+    container: ghcr.io/epitech/coding-style-checker:latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Check coding style
+        run: |
+          pattern="([^:]*):([^:]*):([^:]*):([^:]*)"
+          check.sh $(pwd) $(pwd)
+          while read -r i; do
+            if [[ "$i" =~ $pattern ]]; then
+              FILE=${BASH_REMATCH[1]}
+              LINE=${BASH_REMATCH[2]}
+              TYPE=${BASH_REMATCH[3]}
+              ERR=${BASH_REMATCH[4]}
+              echo "::error title=\"$TYPE coding style error\",file=$FILE,line=$LINE::$ERR"
+            fi
+          done < <(tr '\r' '\n' < coding-style-reports.log)
+          if [ -s coding-style-reports.log ]; then
+            exit 1
+          else
+            rm -f coding-style-reports.log
+          fi
+
+  check_program_compilation:
+    runs-on: ubuntu-latest
+    container: epitechcontent/epitest-docker
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build
+        run: make
+      - name: Clean
+        run: make clean
+      - name: Verify executables
+        run: |
+          for exe in $(echo $EXECUTABLES | tr ',' ' '); do
+            if [ ! -x "$exe" ]; then
+              echo "Error: $exe is not executable or does not exist"
+              exit 1
+            fi
+          done
+
+  run_tests:
+    runs-on: ubuntu-latest
+    container: epitechcontent/epitest-docker
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run tests
+        run: make tests_run
+
+  push_to_mirror:
+    runs-on: ubuntu-latest
+    needs: check_coding_style
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: pixta-dev/repository-mirroring-action@v1
+        with:
+          target_repo_url: ${{ env.MIRROR_URL }}
+          ssh_private_key: ${{ secrets.GIT_SSH_PRIVATE_KEY }}

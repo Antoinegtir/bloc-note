@@ -1,0 +1,60 @@
+version: 2.1
+executors:
+  node-executor:
+    docker:
+      - image: circleci/node:14.17
+  flutter-executor:
+    macos:
+      xcode: "12.5.1"
+
+jobs:
+  build:
+    working_directory: ~/repo
+
+    docker:
+      - image: circleci/node:14.17
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-
+
+      - run:
+          name: Install Dependencies
+          command: npm ci
+
+      - run:
+          name: Run Server Tests
+          command: npm test
+
+  flutter_build:
+    macos:
+      xcode: "12.5.1"
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - run:
+          name: Install Flutter
+          command: |
+            sudo curl -sSLo /usr/local/bin/flutter https://storage.googleapis.com/flutter_infra/releases/stable/macos/flutter_macos_2.2.3-stable.zip
+            sudo unzip -qo /usr/local/bin/flutter -d /usr/local/bin/
+
+      - run:
+          name: Install Flutter Dependencies
+          command: flutter doctor
+
+      - run:
+          name: Build Flutter App
+          command: flutter build
+
+workflows:
+  version: 2.1
+  build_and_test:
+    jobs:
+      - build
+      - flutter_build
