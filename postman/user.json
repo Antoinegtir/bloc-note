@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "8dc70b69-2c3b-4557-ab19-d050530710cf",
+		"name": "user 🧑‍💻",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27218632",
+		"_collection_link": "https://cloudy-zodiac-730193.postman.co/workspace/Epytodo~3ad8ceb3-fff6-4d2b-a9ff-9d9d8477420a/collection/27218632-8dc70b69-2c3b-4557-ab19-d050530710cf?action=share&creator=27218632&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "My info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BEARER_TOKEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by id, email",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BEARER_TOKEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/email@test.eu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"email@test.eu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BEARER_TOKEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "update_email_value",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "update_name_value",
+							"type": "text"
+						},
+						{
+							"key": "firstname",
+							"value": "update_firstname_value",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "update_password_value",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BEARER_TOKEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
