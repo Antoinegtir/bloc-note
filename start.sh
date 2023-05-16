@@ -6,7 +6,6 @@ mysql -u root -p < server/epytodo.sql
 echo "Lancement du serveur Express..."
 cd server
 npm install
-
 nodemon server.js &
 
 sleep 1
