@@ -1,8 +1,12 @@
 # Epytodo
 
-Welcome                |  Login                | Signup |   Edit Profile 
+Welcome                |  Signin                | Signup |   Edit Profile 
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![]()|![]()|![]()|![]()|
+![](https://github.com/Antoinegtir/bloc-note/blob/main/assets/onboard.png)|![](https://github.com/Antoinegtir/bloc-note/blob/main/assets/signin.png)|![](https://github.com/Antoinegtir/bloc-note/blob/main/assets/signup.png)|![](https://github.com/Antoinegtir/bloc-note/blob/main/assets/editprofile.png)|
+
+Profile                |  Edit Profile                | Note |   Add Note
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/Antoinegtir/bloc-note/blob/main/assets/profile.png)|![](https://github.com/Antoinegtir/bloc-note/blob/main/assets/editprofile.png)|![](https://github.com/Antoinegtir/bloc-note/blob/main/assets/home.png)|![](https://github.com/Antoinegtir/bloc-note/blob/main/assets/addnote.png)|
 
 Server : Server Express JS that alow to create authentificator system, create user with serevals actions & create todo list with sereval actions too.
 
