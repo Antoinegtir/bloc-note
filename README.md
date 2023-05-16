@@ -44,4 +44,3 @@ Bonus: Front end that allow to use the endpoint without curl or postman request 
 - Back-end: @theophile-jr, @njord201, @Antoinegtir
 - Postman: @theophile-jr & @Antoinegtir
 - CI: @Antoinegtir
-- Script: @Antoinegtir
