@@ -1,5 +1,18 @@
 # Epytodo
 
+Description:
+The project aims to build an API for creating a TODO App called EpyTodo. The focus is primarily on the backend development, but there is an option to create a frontend as a bonus.
+
+Objectives:
+
+Develop a MySQL database to manage users and their tasks (todos).
+Build a web server using Node.js and Express.
+Implement REST API routes for user authentication, user management, and todo management.
+Protect routes and allow access only to logged-in users using JSON Web Tokens (JWT).
+Store user passwords securely by hashing them before storing in the database.
+Follow a clean and organized file structure for the project.
+Utilize the listed authorized packages for the project: Express, mysql2, dotenv, jsonwebtoken, bcryptjs, and body-parser (optional).
+
 Welcome                |  Signin                | Signup |   Edit Profile 
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](https://github.com/Antoinegtir/bloc-note/blob/main/assets/onboard.png)|![](https://github.com/Antoinegtir/bloc-note/blob/main/assets/signin.png)|![](https://github.com/Antoinegtir/bloc-note/blob/main/assets/signup.png)|![](https://github.com/Antoinegtir/bloc-note/blob/main/assets/editprofile.png)|
