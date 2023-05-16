@@ -2,7 +2,7 @@
 
 ## Language & Tools used:
 
-<img src="https://skillicons.dev/icons?i=js,express,flutter,dart,circleci,node,mysql"/>
+<img src="https://skillicons.dev/icons?i=js,express,flutter,dart,nodejs,mysql"/>
 
 ## commit norm: 
 

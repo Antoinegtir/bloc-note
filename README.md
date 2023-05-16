@@ -3,6 +3,10 @@
 ## Description:
 The project aims to build an API for creating a TODO App called EpyTodo. The focus is primarily on the backend development, but there is an option to create a frontend as a bonus.
 
+## Language & Tools used:
+
+<img src="https://skillicons.dev/icons?i=js,express,flutter,dart,nodejs,mysql"/>
+
 ## Objectives:
 
 - Develop a MySQL database to manage users and their tasks (todos).
