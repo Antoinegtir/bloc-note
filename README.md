@@ -27,7 +27,8 @@ Profile                |  Edit Profile                | Note |   Add Note
 
 Get Note                |  Delete Note               
 :-------------------------:|:-------------------------:
-![](https://github.com/Antoinegtir/bloc-note/blob/main/assets/note.png)|![](https://github.com/Antoinegtir/bloc-note/blob/main/assets/delete.png)|
+![](https://github.com/Antoinegtir/bloc-note/blob/main/assets/note.png)|![](https://github.com/Antoinegtir/bloc-note/blob/main/assets/delete.png)
+
 Server : Server Express JS that alow to create authentificator system, create user with serevals actions & create todo list with sereval actions too.
 
 Bonus: Front end that allow to use the endpoint without curl or postman request with beautifull graphical interface developped and aivalable in all OS such as Mobile, Desktop, Web.
