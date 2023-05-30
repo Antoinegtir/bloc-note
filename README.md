@@ -45,7 +45,5 @@ Bonus: Front end that allow to use the endpoint without curl or postman request 
 ## Author
 
 - Font-end: @Antoinegtir
-- Back-end: @theophile-jr, @njord201, @Antoinegtir
+- Back-end: @theophile-jr, @Antoinegtir
 - Postman: @theophile-jr & @Antoinegtir
-- CI: @Antoinegtir
-- Script: @Antoinegtir
